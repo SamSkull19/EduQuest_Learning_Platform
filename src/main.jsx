@@ -4,7 +4,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import router from './Router';
-// import AuthProvider from './AuthProvider/AuthProvider';
+import AuthProvider from './AuthProvider/AuthProvider';
 
 import {
   QueryClient,
@@ -16,9 +16,9 @@ const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      {/* <AuthProvider> */}
+      <AuthProvider>
         <RouterProvider router={router} />
-      {/* </AuthProvider> */}
+      </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>,
 )
