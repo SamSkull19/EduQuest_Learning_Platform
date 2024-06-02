@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
 import Navbar from './BasicStructure/Navbar'
+import Footer from './BasicStructure/Footer'
 
 function App() {
 
@@ -14,7 +15,9 @@ function App() {
 
       <Outlet></Outlet>
 
-      
+      <div className="bg-teal-800">
+        <Footer></Footer>
+      </div>
     </>
   )
 }

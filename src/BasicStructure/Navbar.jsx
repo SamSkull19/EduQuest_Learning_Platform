@@ -41,7 +41,7 @@ const Navbar = () => {
                     </div>
 
 
-                    <a className="text-2xl font-bold flex items-center justify-center animate__animated animate__rubberBand text-teal-300"> <LuBookOpenCheck className="mr-2 mt-2" />EduQuest</a>
+                    <a className="text-2xl font-bold flex items-center justify-center animate__animated animate__rubberBand text-teal-300"> <LuBookOpenCheck className="mr-2" />EduQuest</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-teal-200 text-lg font-medium">
