@@ -30,6 +30,10 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
+    
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
 
     const handleLogin = e => {
         e.preventDefault();
@@ -53,9 +57,6 @@ const Login = () => {
             })
     }
 
-    const googleProvider = new GoogleAuthProvider();
-
-    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleLogin = () => {
         signInWithPopup(auth, googleProvider)
@@ -88,7 +89,7 @@ const Login = () => {
         <div className="bg-teal-800 p-10 mx-auto rounded-2xl mt-10 mb-16 flex flex-col-reverse md:flex md:flex-row justify-evenly items-center gap-5">
 
             
-            <div className="w-[340px] md:w-[400px] lg:w-[600px]">
+            <div className="w-[340px] md:w-[400px] lg:w-[600px] ml-0 lg:ml-48">
                 <Swiper
                     modules={[Navigation, Pagination, A11y, Autoplay, EffectFade]}
                     spaceBetween={50}
