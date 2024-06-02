@@ -68,9 +68,12 @@ const Navbar = () => {
                                                 <img alt='...' src={user && user.photoURL} />
                                             </div>
                                         </div>
-                                        <ul tabIndex={0} className="mt-3 z-20 p-2 shadow menu menu-sm dropdown-content rounded-box w-52 text-lime-100 bg-lime-900 bg-opacity-80">
+                                        <ul tabIndex={0} className="mt-3 z-20 p-2 shadow menu menu-sm dropdown-content rounded-box w-52 text-lime-100 bg-teal-600 bg-opacity-80">
                                             <li>
                                                 <a>{user && user.displayName}</a>
+                                            </li>
+                                            <li>
+                                                <a>Dashboard</a>
                                             </li>
                                             <li>
                                                 <a onClick={handleLogOut}>Logout</a>
