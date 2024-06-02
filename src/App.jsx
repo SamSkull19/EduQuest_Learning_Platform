@@ -6,12 +6,15 @@ function App() {
 
   return (
     <>
-      <div className='bg-[#244034]'>
+      <div className='bg-teal-800'>
         <div className="max-w-[1170px] mx-auto">
           <Navbar></Navbar>
         </div>
       </div>
+
       <Outlet></Outlet>
+
+      
     </>
   )
 }
