@@ -11,7 +11,7 @@ import { FaFreeCodeCamp } from "react-icons/fa";
 const OurPartner = () => {
     return (
         <div className="my-20 roboto">
-            <h1 className="text-4xl font-bold text-center mb-5">Our Partners and Collaborators</h1>
+            <h1 className="text-6xl font-bold text-center mb-5">Our Partners and Collaborators</h1>
             <p className="text-center mb-10">At EduQuest, our partners and collaborators are integral to our mission. By joining forces with renowned educational institutions and industry leaders, we bring cutting-edge content and real-world expertise to empower learners worldwide.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 text-9xl gap-8 justify-between">
                 <div className="flex flex-col items-center">

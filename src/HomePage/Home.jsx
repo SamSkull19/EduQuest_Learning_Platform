@@ -1,7 +1,9 @@
 import Banner from "./Banner";
+import CourseHighlight from "./CourseHighlight";
 import OurPartner from "./OurPartner";
 
 const Home = () => {
+    
     return (
         <>
             <div className='bg-teal-800'>
@@ -16,6 +18,7 @@ const Home = () => {
 
             <div className="max-w-[1170px] mx-auto pt-5">
                 <OurPartner></OurPartner>
+                <CourseHighlight></CourseHighlight>
             </div>
         </>
     );
