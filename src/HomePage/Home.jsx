@@ -1,6 +1,10 @@
 import Banner from "./Banner";
+import BecomeInstructor from "./BecomeInstructor";
 import CourseHighlight from "./CourseHighlight";
+import OurFacilities from "./OurFacilities";
 import OurPartner from "./OurPartner";
+import OurProgram from "./OurProgram";
+import Stats from "./Stats";
 
 const Home = () => {
     
@@ -18,7 +22,11 @@ const Home = () => {
 
             <div className="max-w-[1170px] mx-auto pt-5">
                 <OurPartner></OurPartner>
+                <OurProgram></OurProgram>
                 <CourseHighlight></CourseHighlight>
+                <Stats></Stats>
+                <BecomeInstructor></BecomeInstructor>
+                <OurFacilities></OurFacilities>
             </div>
         </>
     );

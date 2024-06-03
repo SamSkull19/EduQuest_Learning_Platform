@@ -55,7 +55,7 @@ const CourseHighlight = () => {
                 className="swiper_container"
             >
                 <SwiperSlide>
-                    <div className='bg-teal-700 rounded-3xl -z-10'>
+                    <div className='bg-teal-700 rounded-3xl -z-10 border border-blue-950'>
                         <div className='pt-7'>
                             <img src={ms1} className='w-[340px] h-[340px] rounded-3xl mx-auto' alt="slide_image" />
                         </div>
@@ -81,7 +81,7 @@ const CourseHighlight = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='bg-teal-700 rounded-3xl -z-10'>
+                    <div className='bg-teal-700 rounded-3xl -z-10 border border-blue-950'>
                         <div className='pt-7'>
                             <img src={ms2} className='w-[340px] h-[340px] rounded-3xl mx-auto' alt="slide_image" />
                         </div>
@@ -107,7 +107,7 @@ const CourseHighlight = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='bg-teal-700 rounded-3xl -z-10'>
+                    <div className='bg-teal-700 rounded-3xl -z-10 border border-blue-950'>
                         <div className='pt-7'>
                             <img src={ms3} className='w-[340px] h-[340px] rounded-3xl mx-auto' alt="slide_image" />
                         </div>
@@ -133,7 +133,7 @@ const CourseHighlight = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='bg-teal-700 rounded-3xl -z-10'>
+                    <div className='bg-teal-700 rounded-3xl -z-10 border border-blue-950'>
                         <div className='pt-7'>
                             <img src={ms4} className='w-[340px] h-[340px] rounded-3xl mx-auto' alt="slide_image" />
                         </div>
@@ -159,7 +159,7 @@ const CourseHighlight = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='bg-teal-700 rounded-3xl -z-10'>
+                    <div className='bg-teal-700 rounded-3xl -z-10 border border-blue-950'>
                         <div className='pt-7'>
                             <img src={ms5} className='w-[340px] h-[340px] rounded-3xl mx-auto' alt="slide_image" />
                         </div>
@@ -186,7 +186,7 @@ const CourseHighlight = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <div className='bg-teal-700 rounded-3xl -z-10'>
+                    <div className='bg-teal-700 rounded-3xl -z-10 border border-blue-950'>
                         <div className='pt-7'>
                             <img src={ms6} className='w-[340px] h-[340px] rounded-3xl mx-auto' alt="slide_image" />
                         </div>
