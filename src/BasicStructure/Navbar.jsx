@@ -28,8 +28,8 @@ const Navbar = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-20 p-2 shadow rounded-box w-52 bg-teal-800 bg-opacity-80 text-teal-200">
                             <li><Link to='/'>Home</Link></li>
-                            <li><Link to='/allJobs'>All Classes</Link></li>
-                            <li><Link to='/blog'>Teach on EduQuest</Link></li>
+                            <li><Link to='/allClasses'>All Classes</Link></li>
+                            <li><Link to='/'>Teach on EduQuest</Link></li>
                             {/* {
                                 user && <>
                                     <li><Link to='/myAppliedJobs'>Applied Jobs</Link></li>
@@ -46,8 +46,8 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-teal-200 text-lg font-medium">
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/allJobs'>All Classes</Link></li>
-                        <li><Link to='/blog'>Teach on EduQuest</Link></li>
+                        <li><Link to='/allClasses'>All Classes</Link></li>
+                        <li><Link to='/'>Teach on EduQuest</Link></li>
                         {/* {
                             user && <>
                                 <li><Link to='/myAppliedJobs'>Applied Jobs</Link></li>
