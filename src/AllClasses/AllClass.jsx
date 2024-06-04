@@ -1,10 +1,21 @@
 import PropTypes from 'prop-types';
+import { useLocation, useNavigate } from 'react-router-dom';
 // import { useLocation, useNavigate } from 'react-router-dom';
 
 const AllClass = ({ course }) => {
     const { _id, title, name, image, price, shortdescription, totalenrolment } = course;
 
     console.log(course);
+
+    const location = useLocation();
+
+    const navigate = useNavigate();
+
+    const handleCourseDetail = () => {
+        navigate(location?.state ? location.state : `/courseDetails/${course._id}`);
+
+        console.group(location);
+    }
 
     return (
         <div>
@@ -28,7 +39,7 @@ const AllClass = ({ course }) => {
                     </div>
 
                     <div className='flex items-center justify-center'>
-                        <button onClick='' className="btn bg-amber-200 outline-amber-200 text-teal-800 w-full text-lg">Enroll Now!</button>
+                        <button onClick={handleCourseDetail} className="btn bg-amber-200 outline-amber-200 text-teal-800 w-full text-lg">Enroll Now!</button>
                     </div>
                 </div>
             </div>
