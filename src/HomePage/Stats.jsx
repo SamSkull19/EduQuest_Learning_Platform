@@ -4,8 +4,39 @@ import stat2 from '../assets/ms2.jpg';
 import stat3 from '../assets/ms8.jpg';
 
 import { motion } from "framer-motion"
+import { useQuery } from '@tanstack/react-query';
+import { useContext } from 'react';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Stats = () => {
+    const { isPending, data: course } = useQuery({
+        queryKey: ['course'],
+        queryFn: () =>
+            fetch('http://localhost:5000/courseLists')
+                .then((res) =>
+                    res.json(),
+                ),
+    })
+
+    const { loading } = useContext(AuthContext);
+
+    if (loading) {
+        return <div className="flex justify-center items-center"><span className="loading loading-spinner loading-lg"></span></div>
+    }
+
+    if (isPending) {
+        return <div className="flex justify-center items-center"><span className="loading loading-dots loading-lg"></span></div>;
+    }
+
+    
+
+    const totalClasses = course?.length || 0;
+
+    const totalEnrollments = course?.reduce((user, course) => user + course.totalenrolment, 0) || 0;
+
+    const totalUsers = totalClasses + totalEnrollments;
+
+
     return (
         <div className='my-20'>
             <div className='flex flex-col justify-center items-center mb-10 ml-5 md:ml-0'>
@@ -20,8 +51,8 @@ const Stats = () => {
                     <div className="card w-96 bg-base-100 shadow-xl image-full">
                         <figure><img src={stat1} alt="..." /></figure>
                         <div className="card-body">
-                            <h2 className="card-title text-5xl font-bold text-orange-300">200k <br />Active Users</h2>
-                            <p className='text-2xl text-stone-300'>1 million daily active users!</p>
+                            <h2 className="card-title text-5xl font-bold text-orange-300">{totalUsers} <br />Active Users</h2>
+                            <p className='text-2xl text-stone-300'>{totalUsers} daily active users!</p>
                             <div className="card-actions justify-end">
                                 <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Join Now !</Link></button>
                             </div>
@@ -34,8 +65,8 @@ const Stats = () => {
                     <div className="card w-96 bg-base-100 shadow-xl image-full">
                         <figure><img src={stat2} alt="..." /></figure>
                         <div className="card-body">
-                            <h2 className="card-title text-5xl font-bold text-orange-300">500k <br />Courses</h2>
-                            <p className='text-2xl text-stone-300'>Over 50k Courses to learn</p>
+                            <h2 className="card-title text-5xl font-bold text-orange-300">{totalClasses} <br />Courses</h2>
+                            <p className='text-2xl text-stone-300'>Over {totalClasses} Courses to learn</p>
                             <div className="card-actions justify-end">
                                 <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Join Now !</Link></button>
                             </div>
@@ -48,8 +79,8 @@ const Stats = () => {
                     <div className="card w-96 bg-base-100 shadow-xl image-full">
                         <figure><img src={stat3} alt="..." /></figure>
                         <div className="card-body">
-                            <h2 className="card-title text-5xl font-bold text-orange-300">700k <br />Enrollment</h2>
-                            <p className='text-2xl text-stone-300'>Over 300k courses Enrolled</p>
+                            <h2 className="card-title text-5xl font-bold text-orange-300">{totalEnrollments} <br />Enrollment</h2>
+                            <p className='text-2xl text-stone-300'>Over {totalEnrollments} courses Enrolled</p>
                             <div className="card-actions justify-end">
                                 <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Join Now !</Link></button>
                             </div>
