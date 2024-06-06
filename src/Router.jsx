@@ -10,6 +10,9 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import CourseDetails from "./CourseDetails/CourseDetails";
 import Payment from "./PaymentProcess/Payment";
 import TeachOnEduQuest from "./TeachOnEduQuest/TeachOnEduQuest";
+import Dashboard from "./Dashboard/Dashboard";
+import UserProfile from "./User/UserProfile";
+import MyEnrollClass from "./MyEnrollClass.jsx/MyEnrollClass";
 
 
 const router = createBrowserRouter([
@@ -48,9 +51,24 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><TeachOnEduQuest></TeachOnEduQuest></PrivateRoute>
             },
 
-
         ]
     },
+
+    // Dashboard Route
+    {
+        path: "/dashboard",
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
+            {
+                path: "myProfile",
+                element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+            },
+            {
+                path: "myEnrollClasses",
+                element: <PrivateRoute><MyEnrollClass></MyEnrollClass></PrivateRoute>
+            },
+        ]
+    }
 
 ]);
 

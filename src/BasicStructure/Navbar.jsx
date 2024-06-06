@@ -73,7 +73,7 @@ const Navbar = () => {
                                                 <a>{user && user.displayName}</a>
                                             </li>
                                             <li>
-                                                <a>Dashboard</a>
+                                                <Link to='/dashboard'>Dashboard</Link>
                                             </li>
                                             <li>
                                                 <a onClick={handleLogOut}>Logout</a>

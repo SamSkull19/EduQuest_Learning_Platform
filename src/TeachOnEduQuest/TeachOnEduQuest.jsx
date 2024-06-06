@@ -25,7 +25,7 @@ const TeachOnEduQuest = () => {
 
         console.log(newTeacherRequest);
 
-        fetch('https://localhost:5000/teacherRequests', {
+        fetch('http://localhost:5000/teacherRequests', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
