@@ -3,9 +3,9 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-// import useAxiosSecure from "../Hooks/useAxiosSecure";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import axios from 'axios';
+
 
 const CheckoutForm = ({ courseDetail }) => {
     const { user } = useContext(AuthContext)
@@ -13,7 +13,7 @@ const CheckoutForm = ({ courseDetail }) => {
     const elements = useElements();
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    // const axiosSecure = useAxiosSecure();
+    const axiosSecure = useAxiosSecure();
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
 
@@ -24,29 +24,19 @@ const CheckoutForm = ({ courseDetail }) => {
     const totalPrice = price;
 
     useEffect(() => {
-        axios.post('http://localhost:5000/create-payment-intent', { price: totalPrice })
+        axiosSecure.post('/create-payment-intent', { price: totalPrice })
           .then(res => {
             console.log(res.data.clientSecret);
             setClientSecret(res.data.clientSecret);
           })
-          
+
           .catch(error => {
             console.error('Error creating payment intent:', error);
             setError('Failed to create payment intent.');
           });
 
-      }, [totalPrice]);
+      }, [axiosSecure,totalPrice]);
 
-    // useEffect(() => {
-    //     if (totalPrice > 0) {
-    //         axios.post('http://localhost:5000/create-payment-intent', { price: totalPrice })
-    //             .then(res => {
-    //                 console.log(res.data.clientSecret);
-    //                 setClientSecret(res.data.clientSecret);
-    //             })
-    //     }
-
-    // }, [totalPrice])
 
     console.log(clientSecret);
 
@@ -109,18 +99,18 @@ const CheckoutForm = ({ courseDetail }) => {
                     instructor: name,
                 }
 
-                const res = await axios.post('http://localhost:5000/payments', payment);
+                const res = await axiosSecure.post('/payments', payment);
                 console.log('payment saved', res.data);
 
                 if (res.data?.paymentResult?.insertedId) {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: "Thank you for the taka paisa",
+                        title: "Thank you for The Payment",
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    navigate('/') //dashboard/paymentHistory
+                    navigate('/')
                 }
 
             }
