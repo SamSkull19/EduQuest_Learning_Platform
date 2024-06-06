@@ -13,6 +13,7 @@ import TeachOnEduQuest from "./TeachOnEduQuest/TeachOnEduQuest";
 import Dashboard from "./Dashboard/Dashboard";
 import UserProfile from "./User/UserProfile";
 import MyEnrollClass from "./MyEnrollClass.jsx/MyEnrollClass";
+import DashboardHome from "./Dashboard/DashboardHome";
 
 
 const router = createBrowserRouter([
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
+            {
+                path: "",
+                element: <PrivateRoute><DashboardHome></DashboardHome></PrivateRoute>
+            },
             {
                 path: "myProfile",
                 element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
