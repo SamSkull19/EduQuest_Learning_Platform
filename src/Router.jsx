@@ -9,6 +9,7 @@ import ErrorPage from "./ErrorPage";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import CourseDetails from "./CourseDetails/CourseDetails";
 import Payment from "./PaymentProcess/Payment";
+import TeachOnEduQuest from "./TeachOnEduQuest/TeachOnEduQuest";
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
             {
                 path: "/paymentCheckout",
                 element: <PrivateRoute><Payment></Payment></PrivateRoute>
+            },
+
+            {
+                path: "/teachOnEduQuest",
+                element: <PrivateRoute><TeachOnEduQuest></TeachOnEduQuest></PrivateRoute>
             },
 
 

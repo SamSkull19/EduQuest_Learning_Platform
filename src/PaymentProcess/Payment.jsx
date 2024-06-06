@@ -22,35 +22,35 @@ const Payment = () => {
         <div className="max-w-[1170px] mx-auto mt-10">
             <h2 className="mb-6 mt-10 text-4xl text-center font-extrabold text-teal-800">Payment</h2>
             <h2 className="mb-6 mt-10 text-2xl text-center font-medium text-teal-800">Payment Through Your Favorite Way</h2>
-            <div className='flex justify-between items-center text-9xl text-teal-800'>
+            <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-between items-center text-9xl text-teal-800 ml-12 lg:ml-0'>
                 <div>
                     <FaCcMastercard />
-                    <p className='text-2xl font-medium text-center'>MasterCard</p>
+                    <p className='text-2xl font-medium'>MasterCard</p>
                 </div>
 
                 <div>
                     <FaPiggyBank />
-                    <p className='text-2xl font-medium text-center'>TrustBank</p>
+                    <p className='text-2xl font-medium'>TrustBank</p>
                 </div>
 
                 <div>
                     <FaRegCreditCard />
-                    <p className='text-2xl font-medium text-center'>CreditCard</p>
+                    <p className='text-2xl font-medium'>CreditCard</p>
                 </div>
 
                 <div>
                     <FaCcDiscover />
-                    <p className='text-2xl font-medium text-center'>Discover</p>
+                    <p className='text-2xl font-medium'>Discover</p>
                 </div>
 
                 <div>
                     <SiAmericanexpress />
-                    <p className='text-2xl font-medium text-center'>American<br />Express</p>
+                    <p className='text-2xl font-medium'>American<br />Express</p>
                 </div>
 
                 <div>
                     <FaCcJcb />
-                    <p className='text-2xl font-medium text-center'>JCB</p>
+                    <p className='text-2xl font-medium'>JCB</p>
                 </div>
 
             </div>
