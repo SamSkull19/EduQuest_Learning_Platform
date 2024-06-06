@@ -8,6 +8,7 @@ import AllClasses from "./AllClasses/AllClasses";
 import ErrorPage from "./ErrorPage";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import CourseDetails from "./CourseDetails/CourseDetails";
+import Payment from "./PaymentProcess/Payment";
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: "/courseDetails/:id",
                 element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>
+            },
+            {
+                path: "/paymentCheckout",
+                element: <PrivateRoute><Payment></Payment></PrivateRoute>
             },
 
 

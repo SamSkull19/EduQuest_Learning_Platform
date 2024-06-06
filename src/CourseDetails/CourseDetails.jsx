@@ -1,21 +1,31 @@
 import { useQuery } from "@tanstack/react-query";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+
+// import useAxiosSecure from "../Hooks/useAxiosSecure";
+
+
 
 const CourseDetails = () => {
     const { isPending, data: course } = useQuery({
         queryKey: ['course'],
         queryFn: () =>
-            fetch('http://localhost:5000/courseLists').then((res) =>
-                res.json(),
-            ),
+            fetch('http://localhost:5000/courseLists')
+                .then((res) =>
+                    res.json(),
+                ),
     })
+
 
 
     const { user, loading } = useContext(AuthContext);
 
     const [courseData, setCourseData] = useState(course);
+
+    // const axiosSecure = useAxiosSecure()
+
+    // const navigate = useNavigate();
 
     useEffect(() => {
         setCourseData(course);
@@ -45,6 +55,9 @@ const CourseDetails = () => {
     const { _id, title, name, image, price, shortdescription, totalenrolment } = courseDetail;
 
 
+
+
+
     return (
         <div className="max-w-[1170px] mx-auto mt-10 flex justify-center">
 
@@ -67,7 +80,7 @@ const CourseDetails = () => {
                             <h1 className="text-xl md:text-2xl font-semibold text-cyan-200 mt-5 mb-3">Posted by : {name}</h1>
                         </div>
 
-                        <button className="btn bg-amber-200 outline-amber-200 text-teal-800 mt-3 w-full h-16 text-2xl font-bold">Pay Now!</button>
+                        <button className="btn bg-amber-200 outline-amber-200 text-teal-800 mt-3 w-full h-16 text-2xl font-bold"><Link to='/paymentCheckout' state={{ courseDetail }}>Pay Now!</Link></button>
 
                     </div>
                 </div>

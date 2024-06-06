@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^2.7.1",
+    "@stripe/stripe-js": "^3.5.0",
     "@tanstack/react-query": "^5.40.0",
     "axios": "^1.7.2",
     "firebase": "^10.12.2",
@@ -21,6 +23,8 @@
     "react-router-dom": "^6.23.1",
     "react-swiper": "^0.1.5",
     "react-toastify": "^10.0.5",
+    "sweetalert2": "^11.11.1",
+    "sweetalert2-react-content": "^5.0.7",
     "swiper": "^11.1.4"
   },
   "devDependencies": {
