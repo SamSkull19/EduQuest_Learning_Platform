@@ -25,17 +25,17 @@ const CheckoutForm = ({ courseDetail }) => {
 
     useEffect(() => {
         axiosSecure.post('/create-payment-intent', { price: totalPrice })
-          .then(res => {
-            console.log(res.data.clientSecret);
-            setClientSecret(res.data.clientSecret);
-          })
+            .then(res => {
+                console.log(res.data.clientSecret);
+                setClientSecret(res.data.clientSecret);
+            })
 
-          .catch(error => {
-            console.error('Error creating payment intent:', error);
-            setError('Failed to create payment intent.');
-          });
+            .catch(error => {
+                console.error('Error creating payment intent:', error);
+                setError('Failed to create payment intent.');
+            });
 
-      }, [axiosSecure,totalPrice]);
+    }, [axiosSecure, totalPrice]);
 
 
     console.log(clientSecret);
@@ -120,27 +120,31 @@ const CheckoutForm = ({ courseDetail }) => {
     };
 
     return (
-        <div>
+        <div className='my-10'>
             <form onSubmit={handleSubmit}>
-                <CardElement
-                    options={{
-                        style: {
-                            base: {
-                                fontSize: '16px',
-                                color: '#424770',
-                                '::placeholder': {
-                                    color: '#aab7c4',
+                <div className='border-2 p-5 border-teal-800'>
+                    <CardElement
+                        options={{
+                            style: {
+                                base: {
+                                    fontSize: '25px',
+                                    color: '#424770',
+                                    '::placeholder': {
+                                        color: '#aab7c4',
+                                    },
+                                },
+                                invalid: {
+                                    color: '#9e2146',
                                 },
                             },
-                            invalid: {
-                                color: '#9e2146',
-                            },
-                        },
-                    }}
-                />
-                <button className="btn btn-sm btn-primary my-4" type="submit" disabled={!stripe || !clientSecret}>
-                    Pay
-                </button>
+                        }}
+                    />
+                </div>
+                <div className='flex justify-center mt-5'>
+                    <button className="btn bg-teal-800 my-4 text-xl text-white w-2/12" type="submit" disabled={!stripe || !clientSecret}>
+                        Pay
+                    </button>
+                </div>
                 <p className="text-red-600">{error}</p>
                 {transactionId && <p className="text-green-600"> Your transaction id: {transactionId}</p>}
             </form>
