@@ -50,7 +50,7 @@ const Navbar = () => {
                         <li><Link to='/teachOnEduQuest'>Teach on EduQuest</Link></li>
                         {/* {
                             user && <>
-                                <li><Link to='/myAppliedJobs'>Applied Jobs</Link></li>
+                                <li><Link to='/'>My Course</Link></li>
 
                             </>
                         } */}
@@ -70,7 +70,7 @@ const Navbar = () => {
                                         </div>
                                         <ul tabIndex={0} className="mt-3 z-20 p-2 shadow menu menu-sm dropdown-content rounded-box w-52 text-lime-100 bg-teal-600 bg-opacity-80">
                                             <li>
-                                                <a>{user && user.displayName}</a>
+                                                <Link to='/dashboard/myProfile'>{user && user.displayName}</Link>
                                             </li>
                                             <li>
                                                 <Link to='/dashboard'>Dashboard</Link>
