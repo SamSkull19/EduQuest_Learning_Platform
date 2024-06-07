@@ -3,17 +3,17 @@ import { Button } from 'reactstrap';
 
 
 const UsersList = ({ user, makeAdmin }) => {
-
+    const { displayName, email, _id, photoURL, isAdmin } = user;
     return (
         <tr className='text-base font-medium'>
-            <td className='border-2 border-black'>{user.displayName ? user.displayName : 'N/A'}</td>
+            <td className='border-2 border-black'>{displayName ? displayName : 'N/A'}</td>
 
-            <td className='border-2 border-black'>{user.email ? user.email : 'N/A'}</td>
+            <td className='border-2 border-black'>{email ? email : 'N/A'}</td>
 
             <td className='border-2 border-black'>
                 {
-                    !user.isAdmin ? (
-                        <Button className='bg-orange-600 text-white' onClick={() => makeAdmin(user._id)}> Make Admin </Button>
+                    !isAdmin ? (
+                        <Button className='bg-orange-600 text-white' onClick={() => makeAdmin(_id)}> Make Admin </Button>
                     ) : (
                         <Button className='bg-gray-400 text-gray-700' disabled>Admin</Button>
                     )
@@ -21,7 +21,7 @@ const UsersList = ({ user, makeAdmin }) => {
             </td>
 
             <td className='border-2 border-black'>
-                <img src={user.photoURL ? user.photoURL : 'N/A'} className='w-14 h-14 rounded-full' alt={user.displayName} />
+                <img src={photoURL ? photoURL : 'N/A'} className='w-14 h-14 rounded-full' alt={displayName} />
             </td>
         </tr>
     );

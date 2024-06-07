@@ -17,6 +17,8 @@ import DashboardHome from "./Dashboard/DashboardHome";
 import MyClassDetails from "./MyEnrollClass.jsx/MyClassDetails";
 import FeedBack from "./FeedBack/FeedBack";
 import UsersLists from "./AdminDashBoard/UsersLists";
+import AdminAllClasses from "./AdminDashBoard/AdminAllClasses";
+import TeacherRequests from "./AdminDashBoard/TeacherRequests";
 
 
 const router = createBrowserRouter([
@@ -89,7 +91,7 @@ const router = createBrowserRouter([
             // User Dashboard Routes
             {
                 path: "teacherRequest",
-                element: <PrivateRoute><FeedBack></FeedBack></PrivateRoute>
+                element: <PrivateRoute><TeacherRequests></TeacherRequests></PrivateRoute>
             },
             {
                 path: "usersList",
@@ -97,7 +99,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "allClasses",
-                element: <PrivateRoute></PrivateRoute>
+                element: <PrivateRoute><AdminAllClasses></AdminAllClasses></PrivateRoute>
             },
         ]
     }

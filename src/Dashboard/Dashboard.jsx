@@ -6,6 +6,7 @@ import { VscFeedback } from "react-icons/vsc";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { PiChalkboardTeacher } from "react-icons/pi";
 
 
 const Dashboard = () => {
@@ -69,6 +70,10 @@ const Dashboard = () => {
 
                                 <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
                                     <NavLink to='/dashboard/usersList'><VscFeedback />All Users</NavLink>
+                                </li>
+
+                                <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
+                                    <NavLink to='/dashboard/teacherRequest'><PiChalkboardTeacher />Teacher Request</NavLink>
                                 </li>
                             </>
                         ) : (

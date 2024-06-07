@@ -16,12 +16,15 @@ const TeachOnEduQuest = () => {
 
         const userName = form.username.value;
         const userEmail = form.emailAddress.value;
+        const images = form.imageLink.value;
         const experienceLevel = form.experience.value;
         const title = form.title.value;
         const jobCategory = form.category.value;
         const qualification = form.qualification.value;
+        const experienceYear = form.experienceYear.value;
+        const status = 'pending';
 
-        const newTeacherRequest = { userName, userEmail, experienceLevel, title, jobCategory, qualification };
+        const newTeacherRequest = { userName, userEmail, images, experienceLevel, title, jobCategory, qualification, experienceYear, status };
 
         console.log(newTeacherRequest);
 
@@ -81,6 +84,11 @@ const TeachOnEduQuest = () => {
                         </div>
 
                         <div>
+                            <label className="text-white ">Image Link : </label>
+                            <input type="text" id="imageLink" name="imageLink" placeholder="Enter Your Photo Link" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md" defaultValue={photoURL} disabled />
+                        </div>
+
+                        <div>
                             <label className="text-white">Experience Level :</label>
                             <select id="experience" name="experience" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md" onChange={(e) => setExperience(e.target.value)} value={experience}>
                                 <option value="" disabled>Select Experience Level</option>
@@ -104,12 +112,18 @@ const TeachOnEduQuest = () => {
                                 <option>Data Science</option>
                                 <option>Graphic Design</option>
                                 <option>Business Management</option>
+                                <option>Coding</option>
                             </select>
                         </div>
 
                         <div>
                             <label className="text-white">Qualification :</label>
                             <input type="text" id="qualification" name="qualification" placeholder="Enter Your Qualification" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md" onChange={(e) => setQualification(e.target.value)} value={qualification} />
+                        </div>
+
+                        <div>
+                            <label className="text-white">Experience :</label>
+                            <input type="number" id="experienceYear" name="experienceYear" placeholder="Enter Year of Experience" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md" />
                         </div>
                     </div>
                     <div className="flex justify-center mt-10 py-5">

@@ -35,7 +35,7 @@ const UsersLists = () => {
                 title: 'Success',
                 text: 'User has been made an admin.',
             });
-        } 
+        }
         else {
             Swal.fire({
                 icon: 'error',
@@ -69,7 +69,9 @@ const UsersLists = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {usersFinal.map(user => <UsersList key={user.id} user={user} makeAdmin={makeAdmin}></UsersList>)}
+                    {
+                        usersFinal.map(user => <UsersList key={user.id} user={user} makeAdmin={makeAdmin}></UsersList>)
+                    }
                 </tbody>
             </Table>
         </div>
