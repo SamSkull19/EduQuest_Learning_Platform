@@ -12,13 +12,13 @@ const FeedBack = () => {
 
         const form = event.target;
 
-        const userName = form.username.value;
-        const emailAddress = form.emailAddress.value; // Add email to newFeedback
-        const photo = form.photo.value;
+        const name = form.username.value;
+        const email = form.emailAddress.value; // Add email to newFeedback
+        const image = form.photo.value;
         const title = form.title.value;
         const feedback = form.feedback.value;
 
-        const newFeedback = { userName, emailAddress, photo, title, feedback };
+        const newFeedback = { name, email, image, title, feedback };
 
         console.log(newFeedback);
 
