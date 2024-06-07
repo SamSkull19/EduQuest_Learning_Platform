@@ -110,7 +110,7 @@ const CheckoutForm = ({ courseDetail }) => {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    navigate('/')
+                    navigate(`/dashboard/myEnrollClasses`);
                 }
 
             }

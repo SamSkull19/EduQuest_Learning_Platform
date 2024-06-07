@@ -1,3 +1,4 @@
+import FeedBackShows from "../FeedBack/FeedBackShows";
 import Banner from "./Banner";
 import BecomeInstructor from "./BecomeInstructor";
 import CourseHighlight from "./CourseHighlight";
@@ -25,6 +26,7 @@ const Home = () => {
                 <OurProgram></OurProgram>
                 <CourseHighlight></CourseHighlight>
                 <Stats></Stats>
+                <FeedBackShows></FeedBackShows>
                 <BecomeInstructor></BecomeInstructor>
                 <OurFacilities></OurFacilities>
             </div>

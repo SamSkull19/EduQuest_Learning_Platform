@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineClass } from "react-icons/md";
+import { VscFeedback } from "react-icons/vsc";
 
 
 const Dashboard = () => {
@@ -39,7 +40,7 @@ const Dashboard = () => {
                         </li>
 
                         <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
-                            <NavLink to='/dashboard/feedback'><MdOutlineClass />FeedBack</NavLink>
+                            <NavLink to='/dashboard/feedback'><VscFeedback />FeedBack</NavLink>
                         </li>
 
                     </ul>
