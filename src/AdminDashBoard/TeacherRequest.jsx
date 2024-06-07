@@ -6,13 +6,13 @@ const TeacherRequest = ({ req, handleReqApprove, handleReqReject }) => {
 
     return (
         <tr>
-            <td className='border-2 border-teal-800'>{userName}</td>
-            <td className='border-2 border-teal-800'><img src={images} alt={userName} className="w-7 h-7 rounded-full" /></td>
-            <td className='border-2 border-teal-800'>{experienceLevel}</td>
-            <td className='border-2 border-teal-800'>{title}</td>
-            <td className='border-2 border-teal-800'>{jobCategory}</td>
-            <td className='border-2 border-teal-800'>{status}</td>
-            <td className='border-2 border-teal-800'>
+            <td>{userName}</td>
+            <td><img src={images} alt={userName} className="w-7 h-7 rounded-full" /></td>
+            <td>{experienceLevel}</td>
+            <td>{title}</td>
+            <td>{jobCategory}</td>
+            <td>{status}</td>
+            <td>
                 <Button
                     className='bg-green-700 text-orange-200'
                     disabled={status !== 'pending'}
@@ -21,7 +21,7 @@ const TeacherRequest = ({ req, handleReqApprove, handleReqReject }) => {
                     Approve
                 </Button>
             </td>
-            <td className='border-2 border-teal-800'>
+            <td>
                 <Button
                     className='bg-orange-800 text-orange-200'
                     disabled={status !== 'pending'}

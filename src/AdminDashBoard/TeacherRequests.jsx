@@ -59,18 +59,18 @@ const TeacherRequests = () => {
 
     return (
         <div className='p-20'>
-            <h2 className="text-2xl mb-4">Teacher Requests</h2>
-            <Table bordered className='border-2 border-teal-800'>
+            <h2 className="text-4xl text-slate-800 font-bold text-center mb-5 ">Teacher Requests</h2>
+            <Table bordered className='bg-gray-600 text-lime-200'>
                 <thead>
-                    <tr>
-                        <th className='border-2 border-teal-800'>Name</th>
-                        <th className='border-2 border-teal-800'>Image</th>
-                        <th className='border-2 border-teal-800'>Experience</th>
-                        <th className='border-2 border-teal-800'>Title</th>
-                        <th className='border-2 border-teal-800'>Category</th>
-                        <th className='border-2 border-teal-800'>Status</th>
-                        <th className='border-2 border-teal-800'>Approve</th>
-                        <th className='border-2 border-teal-800'>Reject</th>
+                    <tr className='text-amber-400'>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Experience</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Approve</th>
+                        <th>Reject</th>
                     </tr>
                 </thead>
                 <tbody>

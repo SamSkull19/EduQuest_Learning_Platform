@@ -6,11 +6,11 @@ const UsersList = ({ user, makeAdmin }) => {
     const { displayName, email, _id, photoURL, isAdmin } = user;
     return (
         <tr className='text-base font-medium'>
-            <td className='border-2 border-black'>{displayName ? displayName : 'N/A'}</td>
+            <td>{displayName ? displayName : 'N/A'}</td>
 
-            <td className='border-2 border-black'>{email ? email : 'N/A'}</td>
+            <td>{email ? email : 'N/A'}</td>
 
-            <td className='border-2 border-black'>
+            <td>
                 {
                     !isAdmin ? (
                         <Button className='bg-orange-600 text-white' onClick={() => makeAdmin(_id)}> Make Admin </Button>
@@ -20,7 +20,7 @@ const UsersList = ({ user, makeAdmin }) => {
                 }
             </td>
 
-            <td className='border-2 border-black'>
+            <td>
                 <img src={photoURL ? photoURL : 'N/A'} className='w-14 h-14 rounded-full' alt={displayName} />
             </td>
         </tr>

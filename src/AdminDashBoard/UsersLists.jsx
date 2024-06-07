@@ -59,13 +59,13 @@ const UsersLists = () => {
             <div className="flex items-center justify-center">
                 <input type="text" placeholder="Search by Job Title" value={searchQuery} onChange={handleSearchChange} className="input input-bordered mb-4 bg-stone-500 w-[350px]" />
             </div>
-            <Table striped bordered hover className='border-2 border-red-950 mt-10'>
+            <Table striped bordered hover className='mt-10 font-bold bg-cyan-400 text-teal-800'>
                 <thead>
-                    <tr className='text-lg font-bold text-black'>
-                        <th className='border-2 border-black'>User Name</th>
-                        <th className='border-2 border-black'>User Email</th>
-                        <th className='border-2 border-black'>Make Admin</th>
-                        <th className='border-2 border-black'>User Image</th>
+                    <tr className='text-lg font-bold text-orange-800'>
+                        <th>User Name</th>
+                        <th>User Email</th>
+                        <th>Make Admin</th>
+                        <th>User Image</th>
                     </tr>
                 </thead>
                 <tbody>
