@@ -38,6 +38,10 @@ const Dashboard = () => {
                             <NavLink to='/dashboard/myEnrollClasses'><MdOutlineClass />My Classes</NavLink>
                         </li>
 
+                        <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
+                            <NavLink to='/dashboard/feedback'><MdOutlineClass />FeedBack</NavLink>
+                        </li>
+
                     </ul>
                 </div>
             </div>

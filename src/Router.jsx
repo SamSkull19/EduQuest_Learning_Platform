@@ -15,6 +15,7 @@ import UserProfile from "./User/UserProfile";
 import MyEnrollClass from "./MyEnrollClass.jsx/MyEnrollClass";
 import DashboardHome from "./Dashboard/DashboardHome";
 import MyClassDetails from "./MyEnrollClass.jsx/MyClassDetails";
+import FeedBack from "./FeedBack/FeedBack";
 
 
 const router = createBrowserRouter([
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
             {
                 path: "myCourseDetails/:id",
                 element: <PrivateRoute><MyClassDetails></MyClassDetails></PrivateRoute>
+            },
+            {
+                path: "feedback",
+                element: <PrivateRoute><FeedBack></FeedBack></PrivateRoute>
             },
         ]
     }
