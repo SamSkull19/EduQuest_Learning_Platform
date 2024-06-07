@@ -66,6 +66,8 @@ const router = createBrowserRouter([
                 path: "",
                 element: <PrivateRoute><DashboardHome></DashboardHome></PrivateRoute>
             },
+
+            // User Dashboard Routes
             {
                 path: "myProfile",
                 element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
@@ -80,6 +82,20 @@ const router = createBrowserRouter([
             },
             {
                 path: "feedback",
+                element: <PrivateRoute><FeedBack></FeedBack></PrivateRoute>
+            },
+
+            // User Dashboard Routes
+            {
+                path: "teacherRequest",
+                element: <PrivateRoute><FeedBack></FeedBack></PrivateRoute>
+            },
+            {
+                path: "users",
+                element: <PrivateRoute><FeedBack></FeedBack></PrivateRoute>
+            },
+            {
+                path: "allClasses",
                 element: <PrivateRoute><FeedBack></FeedBack></PrivateRoute>
             },
         ]

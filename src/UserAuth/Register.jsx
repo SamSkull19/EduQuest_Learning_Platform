@@ -16,11 +16,16 @@ import 'swiper/css/scrollbar';
 import ls1 from '../assets/r1.jpg';
 import ls2 from '../assets/r2.jpg';
 import ls3 from '../assets/r3.jpg';
+import { axiosSecure } from "../Hooks/useAxiosSecure";
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
 
+    const userList = async (user) => {
+        const res = await axiosSecure.post('/userList', user);
+        console.log(res.data);
+    };
 
     const handleRegister = e => {
         e.preventDefault();
@@ -39,45 +44,51 @@ const Register = () => {
             toast('Password should have at least one uppercase character.');
             return;
         }
-        
+
         else if (!/[a-z]/.test(password)) {
             toast('Password should have at least one lowercase character.');
             return;
         }
 
-        else if(!acceptTerms){
+        else if (!acceptTerms) {
             toast('Please accept our Terms and Conditions.');
             return;
         }
 
 
         createUser(email, password)
-
             .then(result => {
-                console.log(result.user);
+                const newUser = {
+                    email: result.user.email,
+                    displayName: displayName,
+                    photoURL: photoURL
+                };
+
                 updateProfile(result.user, {
                     displayName: displayName,
-                    photoURL : photoURL
+                    photoURL: photoURL
                 })
-                .then( () => console.log('Profile Updated'))
-                .catch( error => console.log(error))
+                    .then(() => console.log('Profile Updated'))
+                    .catch(error => console.log(error));
+
+                userList(newUser);
+
                 toast('User Successfully Created');
                 e.target.reset();
             })
-
             .catch(error => {
                 console.log(error);
-                toast('Already Registered')
-            })
+                toast('Already Registered');
+            });
 
-        fetch()
+
 
     }
 
     return (
         <div className="bg-teal-800 p-10 mx-auto rounded-2xl mt-10 mb-16 flex flex-col md:flex md:flex-row justify-evenly items-center gap-5">
 
-            
+
             <div className="bg-emerald-700 p-7 rounded-2xl ml-0 lg:ml-48">
                 <form onSubmit={handleRegister}>
                     <label className="input input-bordered flex items-center gap-2 mb-5">
@@ -159,7 +170,7 @@ const Register = () => {
             </div>
             <ToastContainer />
         </div>
-        
+
     );
 
 };

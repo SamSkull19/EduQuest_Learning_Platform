@@ -4,8 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import auth from "../firebase/firebase.config";
+
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,18 +20,20 @@ import 'swiper/css/scrollbar';
 import ls1 from '../assets/ls1.jpg';
 import ls2 from '../assets/ls2.jpg';
 import ls3 from '../assets/ls3.jpg';
+import { axiosSecure } from "../Hooks/useAxiosSecure";
 // import axios from "axios";
 
 const Login = () => {
 
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
 
     const location = useLocation();
     const navigate = useNavigate();
 
-    
-    const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider();
+    const userList = async (user) => {
+        const res = await axiosSecure.post('/userList', user);
+        console.log(res.data);
+    };
 
 
     const handleLogin = e => {
@@ -45,10 +46,12 @@ const Login = () => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
 
+                userList(loggedInUser);
+
                 toast('Successfully Logged in');
                 e.target.reset();
 
-
+                navigate(location?.state ? location.state : '/');
             })
 
             .catch(error => {
@@ -59,10 +62,14 @@ const Login = () => {
 
 
     const handleGoogleLogin = () => {
-        signInWithPopup(auth, googleProvider)
+        signInWithGoogle()
             .then(result => {
                 const goggleUser = result.user;
                 console.log(goggleUser);
+
+                userList(goggleUser);
+
+                toast('Successfully Logged in with Google');
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
@@ -72,10 +79,14 @@ const Login = () => {
     }
 
     const handleGithubLogin = () => {
-        signInWithPopup(auth, githubProvider)
+        signInWithGithub()
             .then(result => {
                 const githubUser = result.user;
                 console.log(githubUser);
+
+                userList(githubUser);
+
+                toast('Successfully Logged in with GitHub');
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
@@ -88,7 +99,7 @@ const Login = () => {
     return (
         <div className="bg-teal-800 p-10 mx-auto rounded-2xl mt-10 mb-16 flex flex-col-reverse md:flex md:flex-row justify-evenly items-center gap-5">
 
-            
+
             <div className="w-[340px] md:w-[400px] lg:w-[600px] ml-0 lg:ml-48">
                 <Swiper
                     modules={[Navigation, Pagination, A11y, Autoplay, EffectFade]}
