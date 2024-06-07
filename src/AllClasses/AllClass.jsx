@@ -13,8 +13,7 @@ const AllClass = ({ course }) => {
 
     const handleCourseDetail = () => {
         navigate(location?.state ? location.state : `/courseDetails/${course._id}`);
-
-        console.group(location);
+        console.log(location);
     }
 
     return (
