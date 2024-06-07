@@ -32,11 +32,11 @@ const MyClassDetails = () => {
     return (
         <div>
             <div className="mb-6 flex items-center p-4">
-                <img src={image} alt={title} className="w-40 h-40 rounded-full mb-4" />
+                <img src={image} alt={title} className="w-32 h-32 rounded-full mb-4" />
                 <div className='ml-10'>
                     <h2 className="text-4xl font-bold mb-2">{title}</h2>
-                    <p className="text-xl mb-4">{shortdescription}</p>
-                    <p className="text-lg">Instructor: {name}</p>
+                    <p className="text-xl mb-2 font-medium">{shortdescription}</p>
+                    <p className="text-xl font-semibold text-amber-950">Instructor: {name}</p>
                 </div>
             </div>
 
