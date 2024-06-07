@@ -36,27 +36,46 @@ const TeacherRequests = () => {
         }
     };
 
+    const handleReqReject = async (id) => {
+        const res = await axiosSecure.put(`/teacherRequests/reject/${id}`);
+        if (res.status === 200) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Request has been rejected.',
+            });
+            loadTeacherRequests();
+        }
+        else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Failed to reject the request.',
+            });
+        }
+    };
+
 
 
     return (
-        <div>
+        <div className='p-20'>
             <h2 className="text-2xl mb-4">Teacher Requests</h2>
-            <Table bordered>
+            <Table bordered className='border-2 border-teal-800'>
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Experience</th>
-                        <th>Title</th>
-                        <th>Category</th>
-                        <th>Status</th>
-                        <th>Approve</th>
-                        <th>Reject</th>
+                        <th className='border-2 border-teal-800'>Name</th>
+                        <th className='border-2 border-teal-800'>Image</th>
+                        <th className='border-2 border-teal-800'>Experience</th>
+                        <th className='border-2 border-teal-800'>Title</th>
+                        <th className='border-2 border-teal-800'>Category</th>
+                        <th className='border-2 border-teal-800'>Status</th>
+                        <th className='border-2 border-teal-800'>Approve</th>
+                        <th className='border-2 border-teal-800'>Reject</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        teacherRequests.map(req => <TeacherRequest key={teacherRequests._id} req={req} handleReqApprove={handleReqApprove}></TeacherRequest>)
+                        teacherRequests.map(req => <TeacherRequest key={teacherRequests._id} req={req} handleReqApprove={handleReqApprove} handleReqReject={handleReqReject}></TeacherRequest>)
                     }
                 </tbody>
             </Table>
