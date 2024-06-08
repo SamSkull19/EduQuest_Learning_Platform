@@ -7,6 +7,8 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { PiChalkboardTeacher } from "react-icons/pi";
+import { FaDiscourse } from "react-icons/fa6";
+import { MdAddChart } from "react-icons/md";
 
 
 const Dashboard = () => {
@@ -91,12 +93,24 @@ const Dashboard = () => {
                                 </li>
 
                                 <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
-                                    <NavLink to='/dashboard/myClasses'><MdOutlineClass />My Classes</NavLink>
+                                    <NavLink to='/dashboard/addAClass'><MdAddChart />Add A Classes</NavLink>
                                 </li>
 
                                 <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
-                                    <NavLink to='/dashboard/feedback'><VscFeedback />Assignment</NavLink>
+                                    <NavLink to='/dashboard/myAddClass'><FaDiscourse />My Classes</NavLink>
                                 </li>
+
+                                <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
+                                    <NavLink to='/dashboard/myEnrollClasses'><MdOutlineClass />My Enroll Classes</NavLink>
+                                </li>
+
+                                <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
+                                    <NavLink to='/dashboard/feedback'><VscFeedback />FeedBack</NavLink>
+                                </li>
+
+                                {/* <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
+                                    <NavLink to='/dashboard/feedback'><VscFeedback />Assignment</NavLink>
+                                </li> */}
                             </>
                         ) : (
                             <>
@@ -105,12 +119,15 @@ const Dashboard = () => {
                                 <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-16 text-xl font-medium">
                                     <NavLink to='/'> <FaHome />Home</NavLink>
                                 </li>
+
                                 <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
                                     <NavLink to='/dashboard/myProfile'><CgProfile />Profile</NavLink>
                                 </li>
+
                                 <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
                                     <NavLink to='/dashboard/myEnrollClasses'><MdOutlineClass />My Enroll Classes</NavLink>
                                 </li>
+
                                 <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
                                     <NavLink to='/dashboard/feedback'><VscFeedback />FeedBack</NavLink>
                                 </li>
