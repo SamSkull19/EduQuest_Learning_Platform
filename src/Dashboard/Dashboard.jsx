@@ -24,13 +24,15 @@ const Dashboard = () => {
     })
 
 
-    if (loading || userPending || !users) {
+
+
+    if (loading || userPending || !users ) {
         return <div className="flex justify-center items-center"><span className="loading loading-spinner loading-lg"></span></div>;
     }
 
-    const validUser = users.find(user => user.email === userEmail) || { isAdmin: false };
+    const validUser = users.find(user => user.email === userEmail) || { isAdmin: false, role: 'student' };
+    const { isAdmin, role } = validUser;
 
-    const { isAdmin } = validUser;
 
 
     return (
@@ -76,8 +78,30 @@ const Dashboard = () => {
                                     <NavLink to='/dashboard/teacherRequest'><PiChalkboardTeacher />Teacher Request</NavLink>
                                 </li>
                             </>
+                        ) : role === 'teacher' ? (
+                            <>
+                                {/* Teacher Dashboard */}
+
+                                <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-16 text-xl font-medium">
+                                    <NavLink to='/'> <FaHome />Home</NavLink>
+                                </li>
+
+                                <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
+                                    <NavLink to='/dashboard/myProfile'><CgProfile />Profile</NavLink>
+                                </li>
+
+                                <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
+                                    <NavLink to='/dashboard/myClasses'><MdOutlineClass />My Classes</NavLink>
+                                </li>
+
+                                <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
+                                    <NavLink to='/dashboard/feedback'><VscFeedback />Assignment</NavLink>
+                                </li>
+                            </>
                         ) : (
                             <>
+                                {/* Student Dashboard */}
+
                                 <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-16 text-xl font-medium">
                                     <NavLink to='/'> <FaHome />Home</NavLink>
                                 </li>
@@ -85,13 +109,12 @@ const Dashboard = () => {
                                     <NavLink to='/dashboard/myProfile'><CgProfile />Profile</NavLink>
                                 </li>
                                 <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
-                                    <NavLink to='/dashboard/myEnrollClasses'><MdOutlineClass />My Classes</NavLink>
+                                    <NavLink to='/dashboard/myEnrollClasses'><MdOutlineClass />My Enroll Classes</NavLink>
                                 </li>
                                 <li className="border-2 border-orange-200 bg-orange-200 rounded-xl mt-5 text-xl font-medium">
                                     <NavLink to='/dashboard/feedback'><VscFeedback />FeedBack</NavLink>
                                 </li>
                             </>
-
                         )}
 
                     </ul>
