@@ -50,89 +50,94 @@ const AddAClass = () => {
     };
 
     return (
-        <div className="w-[380px] mx-auto mt-10 bg-teal-800 p-8 rounded-xl">
+        <div>
+            <div>
+                <h2 className="text-4xl text-slate-800 font-bold text-center mb-5">Add Classes</h2>
+            </div>
+            <div className="w-[380px] mx-auto mt-10 bg-teal-800 p-8 rounded-xl">
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div>
-                    <label htmlFor="title" className="block text-lg font-medium text-gray-200">
-                        Title
-                    </label>
-                    <input
-                        id="title"
-                        type="text"
-                        {...register('title', { required: true })}
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                    />
-                </div>
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                    <div>
+                        <label htmlFor="title" className="block text-lg font-medium text-gray-200">
+                            Title
+                        </label>
+                        <input
+                            id="title"
+                            type="text"
+                            {...register('title', { required: true })}
+                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+                        />
+                    </div>
 
-                <div>
-                    <label htmlFor="name" className="block text-lg font-medium text-gray-200">
-                        Name
-                    </label>
-                    <input
-                        id="name"
-                        type="text"
-                        value={user.displayName}
-                        readOnly
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100"
-                    />
-                </div>
+                    <div>
+                        <label htmlFor="name" className="block text-lg font-medium text-gray-200">
+                            Name
+                        </label>
+                        <input
+                            id="name"
+                            type="text"
+                            value={user.displayName}
+                            readOnly
+                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100"
+                        />
+                    </div>
 
-                <div>
-                    <label htmlFor="email" className="block text-lg font-medium text-gray-200">
-                        Email
-                    </label>
-                    <input
-                        id="email"
-                        type="email"
-                        value={user.email}
-                        readOnly
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100"
-                    />
-                </div>
+                    <div>
+                        <label htmlFor="email" className="block text-lg font-medium text-gray-200">
+                            Email
+                        </label>
+                        <input
+                            id="email"
+                            type="email"
+                            value={user.email}
+                            readOnly
+                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100"
+                        />
+                    </div>
 
-                <div>
-                    <label htmlFor="price" className="block text-lg font-medium text-gray-200">
-                        Price
-                    </label>
-                    <input
-                        id="price"
-                        type="number"
-                        {...register('price', { required: true })}
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                    />
-                </div>
+                    <div>
+                        <label htmlFor="price" className="block text-lg font-medium text-gray-200">
+                            Price
+                        </label>
+                        <input
+                            id="price"
+                            type="number"
+                            {...register('price', { required: true })}
+                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+                        />
+                    </div>
 
-                <div>
-                    <label htmlFor="shortdescription" className="block text-lg font-medium text-gray-200">
-                        Description
-                    </label>
-                    <textarea
-                        id="shortdescription"
-                        {...register('shortdescription', { required: true })}
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                    />
-                </div>
+                    <div>
+                        <label htmlFor="shortdescription" className="block text-lg font-medium text-gray-200">
+                            Description
+                        </label>
+                        <textarea
+                            id="shortdescription"
+                            {...register('shortdescription', { required: true })}
+                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+                        />
+                    </div>
 
-                <div>
-                    <label htmlFor="image" className="block text-lg font-medium text-gray-200">
-                        Image URL
-                    </label>
-                    <input
-                        id="image"
-                        type="text"
-                        {...register('image', { required: true })}
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                    />
-                </div>
+                    <div>
+                        <label htmlFor="image" className="block text-lg font-medium text-gray-200">
+                            Image URL
+                        </label>
+                        <input
+                            id="image"
+                            type="text"
+                            {...register('image', { required: true })}
+                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+                        />
+                    </div>
 
-                <button
-                    type="submit"
-                    className="w-full bg-blue-500 text-white p-2 rounded-lg "
-                >
-                    Add Class
-                </button>
-            </form>
+                    <button
+                        type="submit"
+                        className="w-full bg-blue-500 text-white p-2 rounded-lg "
+                    >
+                        Add Class
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };
