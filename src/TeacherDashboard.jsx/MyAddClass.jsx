@@ -43,7 +43,7 @@ const MyAddClass = ({ course }) => {
 
     const handleDetails = () => {
         if (status === 'approved') {
-            navigate(`/dashboard/myClass/${_id}`);
+            navigate(`/dashboard/myAddClass/${_id}`);
         }
     };
 
@@ -73,7 +73,7 @@ const MyAddClass = ({ course }) => {
                         </button>
 
                         <button onClick={handleDetails} className='btn bg-slate-400 mt-5'>
-                            {status === 'pending' ? 'See Details' : 'Details Disabled'}
+                            {status === 'approved' ? 'See Details' : 'Details Disabled'}
                         </button>
                         
                         {isModalOpen && <UpdateClassModal course={course} onClose={() => setIsModalOpen(false)} />}

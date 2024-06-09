@@ -19,8 +19,9 @@ import FeedBack from "./FeedBack/FeedBack";
 import UsersLists from "./AdminDashBoard/UsersLists";
 import AdminAllClasses from "./AdminDashBoard/AdminAllClasses";
 import TeacherRequests from "./AdminDashBoard/TeacherRequests";
-import MyAddClasses from "./StudentDashboard.jsx/MyAddClasses";
-import AddAClass from "./StudentDashboard.jsx/AddAClass";
+import MyAddClasses from "./TeacherDashboard.jsx/MyAddClasses";
+import AddAClass from "./TeacherDashboard.jsx/AddAClass";
+import SeeDetails from "./TeacherDashboard.jsx/SeeDetails";
 
 
 const router = createBrowserRouter([
@@ -90,7 +91,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><FeedBack></FeedBack></PrivateRoute>
             },
 
-            // User Dashboard Routes
+            // Admin Dashboard Routes
             {
                 path: "teacherRequest",
                 element: <PrivateRoute><TeacherRequests></TeacherRequests></PrivateRoute>
@@ -112,6 +113,10 @@ const router = createBrowserRouter([
             {
                 path: "myAddClass",
                 element: <PrivateRoute><MyAddClasses></MyAddClasses></PrivateRoute>
+            },
+            {
+                path: "myAddClass/:id",
+                element: <PrivateRoute><SeeDetails></SeeDetails></PrivateRoute>
             },
 
         ]
