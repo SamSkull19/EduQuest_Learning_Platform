@@ -22,6 +22,7 @@ import TeacherRequests from "./AdminDashBoard/TeacherRequests";
 import MyAddClasses from "./TeacherDashboard.jsx/MyAddClasses";
 import AddAClass from "./TeacherDashboard.jsx/AddAClass";
 import SeeDetails from "./TeacherDashboard.jsx/SeeDetails";
+import AdminClassDetails from "./AdminDashBoard/AdminClassDetails";
 
 
 const router = createBrowserRouter([
@@ -104,6 +105,10 @@ const router = createBrowserRouter([
                 path: "allClasses",
                 element: <PrivateRoute><AdminAllClasses></AdminAllClasses></PrivateRoute>
             },
+            {
+                path: "allClasses/:id",
+                element: <PrivateRoute><AdminClassDetails></AdminClassDetails></PrivateRoute>
+            },
 
             // Teacher Dashboard Routes
             {
@@ -118,6 +123,7 @@ const router = createBrowserRouter([
                 path: "myAddClass/:id",
                 element: <PrivateRoute><SeeDetails></SeeDetails></PrivateRoute>
             },
+            
 
         ]
     }

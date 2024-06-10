@@ -22,7 +22,7 @@ const SeeDetails = () => {
         getCourseLists();
     }, [axiosSecure]);
 
-    const { isPending, data: assignments } = useQuery({
+    const { isPending: assignmentPending, data: assignments=[] } = useQuery({
         queryKey: ['assignments'],
         queryFn: () =>
             fetch('http://localhost:5000/assignments')
@@ -41,7 +41,7 @@ const SeeDetails = () => {
     const perDayAssignment = assignmentDetails?.perDayAssignment;
 
 
-    if (!courseDetails || isPending) {
+    if (!courseDetails || assignmentPending) {
         return <div className="flex justify-center items-center"><span className="loading loading-dots loading-lg"></span></div>;
     }
 
@@ -80,6 +80,7 @@ const SeeDetails = () => {
             });
         }
     };
+
 
     return (
         <div className='mb-20'>

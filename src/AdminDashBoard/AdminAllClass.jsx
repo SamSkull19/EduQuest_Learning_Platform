@@ -29,7 +29,7 @@ const AdminAllClass = ({ cls, handleClassApprove, handleClassReject }) => {
                 </Button>
                 <Button
                     className='bg-blue-700 text-white'
-                    onClick={() => navigate(`/dashboard/class/${cls._id}`)}
+                    onClick={() => navigate(`/dashboard/allClasses/${cls._id}`)}
                     disabled={cls.status !== 'approved'}
                 >
                     See Progress
