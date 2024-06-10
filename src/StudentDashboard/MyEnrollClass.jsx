@@ -1,11 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import MyClasses from "./MyClasses";
+import Pagination from "../AllClasses/Pagination";
+
 
 const MyEnrollClass = () => {
 
     const { user, loading } = useContext(AuthContext);
+
+    const [currentPage, setCurrentPage] = useState(1);
 
     const userEmail = user?.email;
 
@@ -41,9 +45,12 @@ const MyEnrollClass = () => {
 
 
 
-    console.log(courses);
-    console.log(myClasses);
-    console.log(enrolledCourses);
+    const pageSize = 10;
+    const indexOfLastCourse = currentPage * pageSize;
+    const indexOfFirstCourse = indexOfLastCourse - pageSize;
+    const currentEnrolledCourses = enrolledCourses.slice(indexOfFirstCourse, indexOfLastCourse);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
 
 
@@ -54,9 +61,13 @@ const MyEnrollClass = () => {
                 <p className="text-center text-xl mb-10 text-stone-700">Welcome to EduQuest, your gateway to a world of knowledge. Dive into our diverse learning platform and embark on a quest to unlock your full potential.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ml-20 md:ml-10 lg:ml-5">
                     {
-                        enrolledCourses.map(course => <MyClasses key={course.id} course={course}></MyClasses>)
+                        currentEnrolledCourses.map(course => <MyClasses key={course.id} course={course}></MyClasses>)
                     }
                 </div>
+            </div>
+
+            <div className="flex justify-center mt-20">
+                <Pagination itemsPerPage={pageSize} totalItems={enrolledCourses.length} currentPage={currentPage} paginate={paginate}></Pagination>
             </div>
         </div>
     );

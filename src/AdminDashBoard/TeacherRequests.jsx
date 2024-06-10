@@ -3,9 +3,10 @@ import { Table } from 'reactstrap';
 import { axiosSecure } from '../Hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import TeacherRequest from './TeacherRequest';
+import Pagination from '../AllClasses/Pagination';
 
 const TeacherRequests = () => {
-
+    const [currentPage, setCurrentPage] = useState(1);
     const [teacherRequests, setTeacherRequests] = useState([]);
 
     useEffect(() => {
@@ -57,6 +58,15 @@ const TeacherRequests = () => {
 
 
 
+    const pageSize = 10;
+    const indexOfLastCourse = currentPage * pageSize;
+    const indexOfFirstCourse = indexOfLastCourse - pageSize;
+    const currentTeacherRequests = teacherRequests.slice(indexOfFirstCourse, indexOfLastCourse);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+
+
     return (
         <div className='p-20'>
             <h2 className="text-4xl text-slate-800 font-bold text-center mb-5 ">Teacher Requests</h2>
@@ -75,10 +85,15 @@ const TeacherRequests = () => {
                 </thead>
                 <tbody>
                     {
-                        teacherRequests.map(req => <TeacherRequest key={teacherRequests._id} req={req} handleReqApprove={handleReqApprove} handleReqReject={handleReqReject}></TeacherRequest>)
+                        currentTeacherRequests.map(req => <TeacherRequest key={teacherRequests._id} req={req} handleReqApprove={handleReqApprove} handleReqReject={handleReqReject}></TeacherRequest>)
                     }
                 </tbody>
             </Table>
+
+            <div className="flex justify-center mt-20">
+                <Pagination itemsPerPage={pageSize} totalItems={teacherRequests.length} currentPage={currentPage} paginate={paginate}></Pagination>
+            </div>
+            
         </div>
     );
 };

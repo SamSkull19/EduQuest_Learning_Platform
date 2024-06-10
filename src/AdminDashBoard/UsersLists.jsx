@@ -3,6 +3,7 @@ import { Table } from 'reactstrap';
 import { axiosSecure } from '../Hooks/useAxiosSecure';
 import UsersList from './UsersList';
 import Swal from 'sweetalert2';
+import Pagination from '../AllClasses/Pagination';
 // import Swal from 'sweetalert2';
 
 
@@ -54,6 +55,14 @@ const UsersLists = () => {
         (user.displayName && user.displayName.toLowerCase().includes(searchQuery.toLowerCase())) || (user.email && user.email.toLowerCase().includes(searchQuery.toLowerCase()))
     );
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const pageSize = 10;
+    const indexOfLastCourse = currentPage * pageSize;
+    const indexOfFirstCourse = indexOfLastCourse - pageSize;
+    const currentUsers = usersFinal.slice(indexOfFirstCourse, indexOfLastCourse);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return (
         <div>
             <div className="flex items-center justify-center">
@@ -70,10 +79,13 @@ const UsersLists = () => {
                 </thead>
                 <tbody>
                     {
-                        usersFinal.map(user => <UsersList key={user.id} user={user} makeAdmin={makeAdmin}></UsersList>)
+                        currentUsers.map(user => <UsersList key={user.id} user={user} makeAdmin={makeAdmin}></UsersList>)
                     }
                 </tbody>
             </Table>
+            <div className="flex justify-center mt-20">
+                <Pagination itemsPerPage={pageSize} totalItems={usersFinal.length} currentPage={currentPage} paginate={paginate}></Pagination>
+            </div>
         </div>
     );
 };
