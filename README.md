@@ -1,5 +1,5 @@
 ## EquQuest - Online Learning Platform
-# Welcome to EquQuest, your premier destination for online learning and personal growth. Our platform is designed to cater to a wide range of learners, offering diverse courses and interactive content to help you achieve your educational goals.
+Welcome to EquQuest, your premier destination for online learning and personal growth. Our platform is designed to cater to a wide range of learners, offering diverse courses and interactive content to help you achieve your educational goals.
 
 # Admin Credentials
 Username: SamSkull
