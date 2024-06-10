@@ -19,7 +19,7 @@ const Dashboard = () => {
     const { isPending: userPending, data: users } = useQuery({
         queryKey: ['users'],
         queryFn: () =>
-            fetch('http://localhost:5000/userList')
+            fetch('https://b9a12-server-side-sam-skull19.vercel.app/userList')
                 .then((res) =>
                     res.json(),
                 ),

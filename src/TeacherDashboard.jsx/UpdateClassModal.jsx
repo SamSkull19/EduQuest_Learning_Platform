@@ -17,7 +17,7 @@ const UpdateClassModal = ({ course, onClose }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:5000/courseLists/${_id}`, {
+        fetch(`https://b9a12-server-side-sam-skull19.vercel.app/courseLists/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

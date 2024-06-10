@@ -22,7 +22,7 @@ const FeedBack = () => {
 
         console.log(newFeedback);
 
-        fetch('http://localhost:5000/feedbacks', {
+        fetch('https://b9a12-server-side-sam-skull19.vercel.app/feedbacks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

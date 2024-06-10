@@ -12,7 +12,7 @@ const Stats = () => {
     const { isPending, data: course } = useQuery({
         queryKey: ['course'],
         queryFn: () =>
-            fetch('http://localhost:5000/courseLists')
+            fetch('https://b9a12-server-side-sam-skull19.vercel.app/courseLists')
                 .then((res) =>
                     res.json(),
                 ),

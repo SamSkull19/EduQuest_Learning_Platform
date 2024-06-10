@@ -15,7 +15,7 @@ const TeachOnEduQuest = () => {
     const { isPending: userPending, data: users } = useQuery({
         queryKey: ['user'],
         queryFn: () =>
-            fetch('http://localhost:5000/userList')
+            fetch('https://b9a12-server-side-sam-skull19.vercel.app/userList')
                 .then((res) =>
                     res.json(),
                 ),
@@ -40,7 +40,7 @@ const TeachOnEduQuest = () => {
 
         console.log(newTeacherRequest);
 
-        fetch('http://localhost:5000/teacherRequests', {
+        fetch('https://b9a12-server-side-sam-skull19.vercel.app/teacherRequests', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

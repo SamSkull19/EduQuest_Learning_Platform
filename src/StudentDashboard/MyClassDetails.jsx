@@ -14,7 +14,7 @@ const MyClassDetails = () => {
     const { isPending: myCoursePending, data: course } = useQuery({
         queryKey: ['course'],
         queryFn: () =>
-            fetch('http://localhost:5000/courseLists')
+            fetch('https://b9a12-server-side-sam-skull19.vercel.app/courseLists')
                 .then((res) =>
                     res.json(),
                 ),
@@ -23,7 +23,7 @@ const MyClassDetails = () => {
     const { isPending: myAssignmentPending, data: assignments } = useQuery({
         queryKey: ['assignments'],
         queryFn: () =>
-            fetch('http://localhost:5000/assignments')
+            fetch('https://b9a12-server-side-sam-skull19.vercel.app/assignments')
                 .then((res) =>
                     res.json(),
                 ),

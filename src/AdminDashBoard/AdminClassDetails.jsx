@@ -7,7 +7,7 @@ const AdminClassDetails = () => {
     const { isPending: myCoursePending, data: course } = useQuery({
         queryKey: ['course'],
         queryFn: () =>
-            fetch('http://localhost:5000/courseLists')
+            fetch('https://b9a12-server-side-sam-skull19.vercel.app/courseLists')
                 .then((res) =>
                     res.json(),
                 ),
@@ -16,7 +16,7 @@ const AdminClassDetails = () => {
     const { isPending: feedbackPending, data: feedbacks } = useQuery({
         queryKey: ['feedbacks'],
         queryFn: () =>
-            fetch('http://localhost:5000/feedbacks')
+            fetch('https://b9a12-server-side-sam-skull19.vercel.app/feedbacks')
                 .then((res) =>
                     res.json(),
                 ),

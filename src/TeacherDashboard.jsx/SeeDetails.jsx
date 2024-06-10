@@ -25,7 +25,7 @@ const SeeDetails = () => {
     const { isPending: assignmentPending, data: assignments=[] } = useQuery({
         queryKey: ['assignments'],
         queryFn: () =>
-            fetch('http://localhost:5000/assignments')
+            fetch('https://b9a12-server-side-sam-skull19.vercel.app/assignments')
                 .then((res) =>
                     res.json(),
                 ),

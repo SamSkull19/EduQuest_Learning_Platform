@@ -16,7 +16,7 @@ const MyEnrollClass = () => {
     const { isPending: coursesPending, data: courses } = useQuery({
         queryKey: ['course'],
         queryFn: () =>
-            fetch('http://localhost:5000/courseLists')
+            fetch('https://b9a12-server-side-sam-skull19.vercel.app/courseLists')
                 .then((res) =>
                     res.json(),
                 ),
@@ -26,7 +26,7 @@ const MyEnrollClass = () => {
     const { isPending: myClassesPending, data: myClasses } = useQuery({
         queryKey: ['myClasses', userEmail],
         queryFn: () =>
-            fetch(`http://localhost:5000/payments/${userEmail}`)
+            fetch(`https://b9a12-server-side-sam-skull19.vercel.app/payments/${userEmail}`)
                 .then((res) => res.json()),
         enabled: !!userEmail
     });

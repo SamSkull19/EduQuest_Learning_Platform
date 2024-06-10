@@ -15,7 +15,7 @@ const FeedBackShows = () => {
     const { isPending, data: feedbacks } = useQuery({
         queryKey: ['feedbacks'],
         queryFn: () =>
-            fetch('http://localhost:5000/feedbacks').then((res) =>
+            fetch('https://b9a12-server-side-sam-skull19.vercel.app/feedbacks').then((res) =>
                 res.json(),
             ),
     })
