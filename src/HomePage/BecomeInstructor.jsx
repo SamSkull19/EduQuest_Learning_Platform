@@ -10,7 +10,7 @@ const BecomeInstructor = () => {
                     <h2 className="card-title text-2xl md:text-5xl">Become an Instructor </h2>
                     <p className='text-base md:text-xl'>Become an Instructor at EduQuest and share your expertise with eager learners worldwide. Inspire and educate a global audience while growing your professional profile. Join our community of passionate educators and make a lasting impact today.</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-outline outline-teal-800 bg-teal-800 mt-5 px-10 text-teal-300"><Link to='/allJobs'>Join Now !</Link></button>
+                        <button className="btn btn-outline outline-teal-800 bg-teal-800 mt-5 px-10 text-teal-300"><Link to='/teachOnEduQuest'>Join Now !</Link></button>
                     </div>
                 </div>
             </div>

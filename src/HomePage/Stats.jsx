@@ -54,7 +54,7 @@ const Stats = () => {
                             <h2 className="card-title text-5xl font-bold text-orange-300">{totalUsers} <br />Active Users</h2>
                             <p className='text-2xl text-stone-300'>{totalUsers} daily active users!</p>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Join Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Join Now !</Link></button>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@ const Stats = () => {
                             <h2 className="card-title text-5xl font-bold text-orange-300">{totalClasses} <br />Courses</h2>
                             <p className='text-2xl text-stone-300'>Over {totalClasses} Courses to learn</p>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Join Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Join Now !</Link></button>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@ const Stats = () => {
                             <h2 className="card-title text-5xl font-bold text-orange-300">{totalEnrollments} <br />Enrollment</h2>
                             <p className='text-2xl text-stone-300'>Over {totalEnrollments} courses Enrolled</p>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Join Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Join Now !</Link></button>
                             </div>
                         </div>
                     </div>

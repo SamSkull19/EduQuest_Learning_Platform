@@ -44,7 +44,7 @@ const Banner = () => {
                                 </h2>
                                 <p className='text-lg font-medium text-white'>It includes video lectures, quizzes, interactive simulations, and multimedia presentations. These modules aim to engage students actively, making learning more dynamic and effective.</p>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                             <div className='w-[330px] lg:w-[400px]'>
                                 <img src={ms6} alt=".." className='w-[330px] lg:w-[400px] rounded-2xl' />
@@ -66,7 +66,7 @@ const Banner = () => {
                                 </h2>
                                 <p className='text-lg font-medium text-white'>The platform can tailor the learning experience based on the students pace, preferences, and performance. This includes adaptive learning technologies that adjust the difficulty level and suggest resources based on individual progress.</p>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                             <div className='w-[330px] lg:w-[400px]'>
                                 <img src={ms5} alt=".." className='w-[330px] lg:w-[400px] rounded-2xl' />
@@ -88,7 +88,7 @@ const Banner = () => {
                                 </h2>
                                 <p className='text-lg font-medium text-white'>Features such as discussion forums, group projects, peer reviews, and real-time chat functionalities. These tools foster communication and collaboration among students and instructors, enhancing the learning community.</p>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                             <div className='w-[330px] lg:w-[400px]'>
                                 <img src={ms4} alt=".." className='w-[330px] lg:w-[400px] rounded-2xl' />
@@ -110,7 +110,7 @@ const Banner = () => {
                                 </h2>
                                 <p className='text-lg font-medium text-white'>A variety of assessment tools like quizzes, assignments, and exams, along with automated and instructor-provided feedback. These help in tracking progress and identifying areas that need improvement.</p>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                             <div className='w-[330px] lg:w-[400px]'>
                                 <img src={ms3} alt=".." className='w-[330px] lg:w-[400px] rounded-2xl' />
@@ -132,7 +132,7 @@ const Banner = () => {
                                 </h2>
                                 <p className='text-lg font-medium text-white'>A comprehensive library of resources including e-books, research papers, videos, and supplementary materials. This ensures that students have all the necessary materials to support their learning journey.</p>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                             <div className='w-[330px] lg:w-[400px]'>
                                 <img src={ms2} alt=".." className='w-[330px] lg:w-[400px] rounded-2xl' />
@@ -154,7 +154,7 @@ const Banner = () => {
                                 </h2>
                                 <p className='text-lg font-medium text-white'>Opportunities for direct interaction with instructors through virtual office hours, one-on-one mentoring sessions, and personalized feedback. This aspect is crucial for providing guidance, addressing doubts, and supporting students academic growth.</p>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                             <div className='w-[330px] lg:w-[400px]'>
                                 <img src={ms1} alt=".." className='w-[330px] lg:w-[400px] rounded-2xl' />

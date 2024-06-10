@@ -75,7 +75,7 @@ const CourseHighlight = () => {
                             <div className='flex items-center'>
                                 <h4 className='text-2xl mt-3 text-teal-300 font-bold mr-4'>Price: $49.99</h4>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@ const CourseHighlight = () => {
                             <div className='flex items-center'>
                                 <h4 className='text-2xl mt-3 text-teal-300 font-bold mr-4'>Price: $39.99</h4>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@ const CourseHighlight = () => {
                             <div className='flex items-center'>
                                 <h4 className='text-2xl mt-3 text-teal-300 font-bold mr-4'>Price: $69.99</h4>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                         </div>
                     </div>
@@ -153,7 +153,7 @@ const CourseHighlight = () => {
                             <div className='flex items-center'>
                                 <h4 className='text-2xl mt-3 text-teal-300 font-bold mr-4'>Price: $89.99</h4>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                         </div>
                     </div>
@@ -179,7 +179,7 @@ const CourseHighlight = () => {
                             <div className='flex items-center'>
                                 <h4 className='text-2xl mt-3 text-teal-300 font-bold mr-4'>Price: $19.99</h4>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@ const CourseHighlight = () => {
                             <div className='flex items-center'>
                                 <h4 className='text-2xl mt-3 text-teal-300 font-bold mr-4'>Price: $59.99</h4>
 
-                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allJobs'>Enroll Now !</Link></button>
+                                <button className="btn btn-outline outline-teal-800 mt-5 text-teal-300"><Link to='/allClasses'>Enroll Now !</Link></button>
                             </div>
                         </div>
                     </div>

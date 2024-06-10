@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const OurProgram = () => {
@@ -22,7 +23,7 @@ const OurProgram = () => {
                         </div>
                         <p>Explore the essentials of Cyber Security, covering threat detection, risk management, and defensive strategies. Gain the skills to protect systems and data from cyber threats in todays digital world.</p>
                         <div className="card-actions justify-end">
-                            <button className="btn bg-teal-800 text-white">Enroll Now!</button>
+                            <button className="btn bg-teal-800 text-white"><Link to='/allClasses'>Enroll Now !</Link></button>
                         </div>
                     </div>
                 </div>
@@ -37,7 +38,7 @@ const OurProgram = () => {
                         </div>
                         <p>Dive into Machine Learning and learn how to build predictive models and algorithms. Master techniques like regression, classification, and clustering to solve real-world problems.</p>
                         <div className="card-actions justify-end">
-                            <button className="btn bg-teal-800 text-white">Enroll Now!</button>
+                            <button className="btn bg-teal-800 text-white"><Link to='/allClasses'>Enroll Now !</Link></button>
                         </div>
                     </div>
                 </div>
@@ -52,7 +53,7 @@ const OurProgram = () => {
                         </div>
                         <p>Explore Economic Opportunity to understand market dynamics, policy impacts, and economic development. Learn strategies to drive growth and improve financial stability in communities.</p>
                         <div className="card-actions justify-end">
-                            <button className="btn bg-teal-800 text-white">Enroll Now!</button>
+                            <button className="btn bg-teal-800 text-white"><Link to='/allClasses'>Enroll Now !</Link></button>
                         </div>
                     </div>
                 </div>
@@ -67,7 +68,7 @@ const OurProgram = () => {
                         </div>
                         <p>Uncover the world of Robotics and learn to design, build, and program robots. Explore automation, sensors, and control systems to create innovative robotic solutions.</p>
                         <div className="card-actions justify-end">
-                            <button className="btn bg-teal-800 text-white">Enroll Now!</button>
+                            <button className="btn bg-teal-800 text-white"><Link to='/allClasses'>Enroll Now !</Link></button>
                         </div>
                     </div>
                 </div>
@@ -81,7 +82,7 @@ const OurProgram = () => {
                         </div>
                         <p>The Good Governance domain encompasses principles and practices that ensure the efficient, transparent, accountable, and equitable management of public resources and decision-making processes. </p>
                         <div className="card-actions justify-end">
-                            <button className="btn bg-teal-800 text-white">Enroll Now!</button>
+                            <button className="btn bg-teal-800 text-white"><Link to='/allClasses'>Enroll Now !</Link></button>
                         </div>
                     </div>
                 </div>
@@ -95,7 +96,7 @@ const OurProgram = () => {
                         </div>
                         <p>Personalized Learning tailors educational experiences to individual needs, interests, and learning styles, empowering learners to achieve their full potential.</p>
                         <div className="card-actions justify-end">
-                            <button className="btn bg-teal-800 text-white">Enroll Now!</button>
+                            <button className="btn bg-teal-800 text-white"><Link to='/allClasses'>Enroll Now !</Link></button>
                         </div>
                     </div>
                 </div>
