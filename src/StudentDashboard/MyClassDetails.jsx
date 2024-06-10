@@ -33,18 +33,13 @@ const MyClassDetails = () => {
         return <div className="flex justify-center items-center"><span className="loading loading-spinner loading-lg"></span></div>
     }
 
-
-
     const courseDetail = course && course.find(course => course._id === id);
-
-    const { name, image, shortdescription } = courseDetail;
-
-    const courseAssignments = assignments.find(assignment => assignment.courseId === id);
+    const { name, image, shortdescription, title } = courseDetail || {};
+    const courseAssignments = assignments && assignments.find(assignment => assignment.courseId === id);
 
     console.log(courseAssignments);
 
-
-    const { _id, title, deadline, assignmentDescription } = courseAssignments;
+    const { _id, title: assignmentTitle, deadline, assignmentDescription } = courseAssignments || {};
 
     const handleAssignmentSubmit = async (assignmentId) => {
         console.log(assignmentId);
@@ -64,13 +59,9 @@ const MyClassDetails = () => {
                 text: 'Something went wrong!',
             });
         }
-
     };
 
-
-
     const onSubmit = async (data) => {
-
         const feedbackAdd = {
             title: courseDetail.title,
             feedback: data.feedbackDescription,
@@ -105,17 +96,12 @@ const MyClassDetails = () => {
         }
     };
 
-
-
     const ratingChanged = (newRating) => {
         setValue('rating', newRating);
     };
 
-
-
-
     return (
-        <div>
+        <>
             <div className="mb-6 flex items-center p-4">
                 <img src={image} alt={title} className="w-32 h-32 rounded-full mb-4" />
                 <div className='ml-10'>
@@ -124,8 +110,6 @@ const MyClassDetails = () => {
                     <p className="text-xl font-semibold text-amber-950">Instructor: {name}</p>
                 </div>
             </div>
-
-            {/* Modal */}
 
             <button className="btn bg-gray-700 text-white text-xl mb-10" onClick={() => document.getElementById('my_modal_1').showModal()}> Teaching Evaluation Report (TER) </button>
 
@@ -160,10 +144,6 @@ const MyClassDetails = () => {
                             />
                         </div>
 
-
-
-
-
                         <button
                             type="submit"
                             className="w-full bg-blue-500 text-white p-2 rounded-lg "
@@ -171,42 +151,40 @@ const MyClassDetails = () => {
                             Send button
                         </button>
                     </form>
-
-
                 </div>
             </dialog>
 
-            {/* Modal End */}
+            {courseAssignments ? (
+                <div className='p-4 border-y-2 border-orange-700'>
+                    <h3 className="text-3xl font-semibold mb-4">Assignments</h3>
 
-            <div className='p-4 border-y-2 border-orange-700'>
-                <h3 className="text-3xl font-semibold mb-4">Assignments</h3>
-
-                <table className="min-w-full bg-teal-700">
-                    <thead>
-                        <tr>
-                            <th className="py-2 px-4 border border-red-900">Title</th>
-                            <th className="py-2 px-4 border border-red-900">Description</th>
-                            <th className="py-2 px-4 border border-red-900">Deadline</th>
-                            <th className="py-2 px-4 border border-red-900">Submit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr key={_id} className='text-white'>
-                            <td className="py-2 px-4 border border-red-900">{title}</td>
-                            <td className="py-2 px-4 border border-red-900">{assignmentDescription}</td>
-                            <td className="py-2 px-4 border border-red-900">{deadline}</td>
-                            <td className="py-2 px-4 border border-red-900">
-                                <button onClick={() => handleAssignmentSubmit(_id)} className="bg-orange-500 hover:bg-teal-200 py-1 px-3 rounded">
-                                    Submit
-                                </button>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-
-            </div>
-        </div>
+                    <table className="min-w-full bg-teal-700">
+                        <thead>
+                            <tr>
+                                <th className="py-2 px-4 border border-red-900">Title</th>
+                                <th className="py-2 px-4 border border-red-900">Description</th>
+                                <th className="py-2 px-4 border border-red-900">Deadline</th>
+                                <th className="py-2 px-4 border border-red-900">Submit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr key={_id} className='text-white'>
+                                <td className="py-2 px-4 border border-red-900">{assignmentTitle}</td>
+                                <td className="py-2 px-4 border border-red-900">{assignmentDescription}</td>
+                                <td className="py-2 px-4 border border-red-900">{deadline}</td>
+                                <td className="py-2 px-4 border border-red-900">
+                                    <button onClick={() => handleAssignmentSubmit(_id)} className="bg-orange-500 hover:bg-teal-200 py-1 px-3 rounded">
+                                        Submit
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            ) : (
+                <h1 className='text-3xl font-medium '>No assignment Added </h1>
+            )}
+        </>
     );
 };
 
