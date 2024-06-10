@@ -7,8 +7,6 @@ const MyAddClasses = () => {
     const { user } = useContext(AuthContext);
 
     const { email } = user;
-    console.log(user);
-    console.log(email);
 
     const { isPending, data: courses } = useQuery({
         queryKey: ['courses'],

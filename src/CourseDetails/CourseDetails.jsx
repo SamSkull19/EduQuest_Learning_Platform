@@ -3,11 +3,9 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
-// import useAxiosSecure from "../Hooks/useAxiosSecure";
-
-
 
 const CourseDetails = () => {
+
     const { isPending, data: course } = useQuery({
         queryKey: ['course'],
         queryFn: () =>
@@ -23,9 +21,7 @@ const CourseDetails = () => {
 
     const [courseData, setCourseData] = useState(course);
 
-    // const axiosSecure = useAxiosSecure()
 
-    // const navigate = useNavigate();
 
     useEffect(() => {
         setCourseData(course);
