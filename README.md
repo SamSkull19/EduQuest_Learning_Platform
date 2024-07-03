@@ -3,7 +3,8 @@ Welcome to EquQuest, your premier destination for online learning and personal g
 
 # Admin Credentials
 Username: SamSkull
-Password: Samin1920
+Email: sifatsamin192@gmail.com
+Password: Admin1234
 Live Site Link
 Explore our platform here: [EquQuest Live Site](https://learningplatform-a19d4.web.app)
 
